@@ -1,0 +1,21 @@
+{
+  "mega": {
+    "email": "TVUJ_EMAIL@seznam.cz",
+    "password": "TVOJE_HESLO",
+    "target_folder": "stories"
+  },
+  "bark_url": "https://api.day.app/aRhhxwMKsvmCWY72rAd5a9/TikTok%20Story/Nové%20stáhnuté%20story%20🕵️?sound=calypso&icon=https://cdn-icons-png.flaticon.com/512/463/463574.png",
+  "tiktok": {
+    "user_ids": ["7264317536631161888"],
+    "api_key": "e82d9a7d1emshf4548fa3a7f439fp1dea70jsneabfcb0d1f62",
+    "api_host": "tiktok-scraper7.p.rapidapi.com"
+  },
+  "instagram": {
+    "usernames": ["maty_baloun", "_petr_workout", "jura_workoutt", "schmausmatyas"],
+    "reels_usernames": ["tomcusnovotny"],
+    "api_key": "e82d9a7d1emshf4548fa3a7f439fp1dea70jsneabfcb0d1f62",
+    "api_host": "instagram-social-api.p.rapidapi.com"
+  },
+  "prague_schedule_times": ["09:00", "21:00"],
+  "save_folder": "downloaded_videos"
+}
