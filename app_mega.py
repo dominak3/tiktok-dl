@@ -135,7 +135,17 @@ def fetch_tiktok_stories():
             saved = False
             fname = ""
 
-            if play and not play.endswith(".mp3"):
+            # --- UPRAVENÁ LOGIKA DETEKCE ---
+            # Zjistíme, zda jde o video nebo audio/obrázek na základě mime_type v URL
+            is_video_content = False
+            if play:
+                if "mime_type=video_mp4" in play:
+                    is_video_content = True
+                elif play.endswith(".mp4"): # Fallback, pokud URL neobsahuje parametry
+                    is_video_content = True
+                # Pokud je tam mime_type=audio_mpeg, is_video_content zůstane False
+
+            if is_video_content:
                 fname = os.path.join(SAVE_FOLDER, f"{vid}.mp4")
                 try:
                     rr = requests.get(play, stream=True, timeout=30)
@@ -145,7 +155,9 @@ def fetch_tiktok_stories():
                     saved = True
                 except: pass
 
+            # Pokud se neuložilo jako video (buď selhalo, nebo to bylo audio_mpeg), zkusíme cover
             if not saved:
+                # Prioritizujeme origin_cover (pro audio story), pak images (pro image slide story)
                 image_url = origin_cover if origin_cover else (images[0] if images else None)
                 if image_url:
                     fname = os.path.join(SAVE_FOLDER, f"{vid}.jpg")
