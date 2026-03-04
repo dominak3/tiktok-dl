@@ -13,7 +13,7 @@ from datetime import datetime
 import pytz
 
 # ---------- CONFIG ----------
-CONFIG_FILE = "config.json"
+CONFIG_FILE = "config_mega.json"
 
 if not os.path.exists(CONFIG_FILE):
     print("Chybí config.json.")
